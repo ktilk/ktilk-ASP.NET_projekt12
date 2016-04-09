@@ -1,0 +1,66 @@
+﻿@model Domain.ExerciseInWorkout
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ExerciseInWorkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exercise.ExerciseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exercise.ExerciseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workout.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Workout.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repetitions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repetitions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExerciseInWorkoutID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

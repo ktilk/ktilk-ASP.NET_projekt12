@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Domain.ExerciseType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExerciseTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExerciseTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExerciseTypeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExerciseTypeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExerciseTypeID })
+        </td>
+    </tr>
+}
+
+</table>

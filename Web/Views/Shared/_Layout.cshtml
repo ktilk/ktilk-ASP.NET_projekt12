@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="992178576384-afdl60lk4nsappemghu9k07mh9gqm139.apps.googleusercontent.com">
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Persons", "Index", "Persons")</li>
+                    <li>@Html.ActionLink("Contacts", "Index", "Contacts")</li>
+                    <li>@Html.ActionLink("ContTypes", "Index", "ContactTypes")</li>
+                    <li>@Html.ActionLink("Comps", "Index", "Competitions")</li>
+                    <li>@Html.ActionLink("EInW", "Index", "ExerciseInWorkouts")</li>
+                    <li>@Html.ActionLink("Exercises", "Index", "Exercises")</li>
+                    <li>@Html.ActionLink("ExTypes", "Index", "ExerciseTypes")</li>
+                    <li>@Html.ActionLink("Participations", "Index", "Participations")</li>
+                    <li>@Html.ActionLink("PTypes", "Index", "PlanTypes")</li>
+                    <li>@Html.ActionLink("Plans", "Index", "Plans")</li>
+                    <li>@Html.ActionLink("Workouts", "Index", "Workouts")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
+                <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Kaspar Tilk ASP.NET project</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
